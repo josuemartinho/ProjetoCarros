@@ -1,0 +1,30 @@
+﻿@model RegistoModel
+<div class="col-md-4">
+    <form method="post" asp-controller="RegistoCarros" asp-action="NovoRegisto">
+        <div class="form-group">
+            <label for="marca">Marca:</label>
+            <input type="text" class="form-control" id="marca" asp-for="Marca" placeholder="Insira a marca do carro">
+        </div>
+        <div class="form-group">
+            <label for="modelo">Modelo:</label>
+            <input type="text" class="form-control" id="modelo" asp-for="Modelo" placeholder="Insira o modelo do carro">
+        </div>
+        <div class="form-group">
+            <label for="preco">Preço:</label>
+            <input type="number" class="form-control" id="preco" asp-for="Preco" placeholder="Insira o preço do carro">
+        </div>
+        <div class="form-group">
+            <label for="anoCarro">Ano do Carro:</label>
+            <input type="number" class="form-control" id="anoCarro" asp-for="AnoCarro" placeholder="Insira o ano do carro">
+        </div>
+        <div class="form-group">
+            <label for="tipoCombustivel">Tipo de Combustível:</label>
+            <input type="text" class="form-control" id="tipoCombustivel" asp-for="TipoCombustivel" placeholder="Insira o tipo de combustível">
+        </div>
+        <div class="form-group">
+            <label for="cor">Cor:</label>
+            <input type="text" class="form-control" id="cor" asp-for="Cor" placeholder="Insira a cor do carro">        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary" asp-controller="Emprestimos" asp-action="Index">Voltar</button>
+    </form>
+</div>

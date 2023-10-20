@@ -1,8 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Página Inicial - Venda de Carros";
 }
+@model IEnumerable<RegistoModel>
 
 <div class="container mt-5">
+        <h1 class="">Registos de Carros</h1>
+        <a class="btn btn-sucess" asp-controller="RegistoCarros" asp-action="Action">Novo Registro</a>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -15,12 +19,21 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
-            </tr>
+            @if (Model != null)
+            {
+                foreach (var dados in Model)
+                {
+                    <tr>
+                        <th scope="row">@dados.Id</th>
+                        <td>@dados.Marca</td>
+                        <td>@dados.Modelo</td>
+                        <td>@dados.Preco</td>
+                        <td>@dados.AnoCarro</td>
+                        <td>@dados.TipoCombustivel</td>
+                        <td>@dados.Cor</td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
 </div>
